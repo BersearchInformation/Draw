@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CED31EDE1BD40E5D009E101E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EDD1BD40E5D009E101E /* AppDelegate.swift */; };
+		CED31EE01BD40E5D009E101E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EDF1BD40E5D009E101E /* Document.swift */; };
+		CED31EE31BD40E5D009E101E /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE11BD40E5D009E101E /* Document.xib */; };
+		CED31EE51BD40E5D009E101E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE41BD40E5D009E101E /* Images.xcassets */; };
+		CED31EE81BD40E5E009E101E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE61BD40E5E009E101E /* MainMenu.xib */; };
+		CED31EF41BD40E5F009E101E /* DrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EF31BD40E5F009E101E /* DrawTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CED31EEE1BD40E5F009E101E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED31ED01BD40E5D009E101E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CED31ED71BD40E5D009E101E;
+			remoteInfo = Draw;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CED31ED81BD40E5D009E101E /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED31EDC1BD40E5D009E101E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED31EDD1BD40E5D009E101E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CED31EDF1BD40E5D009E101E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		CED31EE21BD40E5D009E101E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		CED31EE41BD40E5D009E101E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CED31EE71BD40E5E009E101E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CED31EED1BD40E5F009E101E /* DrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED31EF21BD40E5F009E101E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED31EF31BD40E5F009E101E /* DrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CED31ED51BD40E5D009E101E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED31EEA1BD40E5F009E101E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CED31ECF1BD40E5D009E101E = {
+			isa = PBXGroup;
+			children = (
+				CED31EDA1BD40E5D009E101E /* Draw */,
+				CED31EF01BD40E5F009E101E /* DrawTests */,
+				CED31ED91BD40E5D009E101E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CED31ED91BD40E5D009E101E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CED31ED81BD40E5D009E101E /* Draw.app */,
+				CED31EED1BD40E5F009E101E /* DrawTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CED31EDA1BD40E5D009E101E /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				CED31EDD1BD40E5D009E101E /* AppDelegate.swift */,
+				CED31EDF1BD40E5D009E101E /* Document.swift */,
+				CED31EE11BD40E5D009E101E /* Document.xib */,
+				CED31EE41BD40E5D009E101E /* Images.xcassets */,
+				CED31EE61BD40E5E009E101E /* MainMenu.xib */,
+				CED31EDB1BD40E5D009E101E /* Supporting Files */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		CED31EDB1BD40E5D009E101E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CED31EDC1BD40E5D009E101E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CED31EF01BD40E5F009E101E /* DrawTests */ = {
+			isa = PBXGroup;
+			children = (
+				CED31EF31BD40E5F009E101E /* DrawTests.swift */,
+				CED31EF11BD40E5F009E101E /* Supporting Files */,
+			);
+			path = DrawTests;
+			sourceTree = "<group>";
+		};
+		CED31EF11BD40E5F009E101E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CED31EF21BD40E5F009E101E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CED31ED71BD40E5D009E101E /* Draw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED31EF71BD40E5F009E101E /* Build configuration list for PBXNativeTarget "Draw" */;
+			buildPhases = (
+				CED31ED41BD40E5D009E101E /* Sources */,
+				CED31ED51BD40E5D009E101E /* Frameworks */,
+				CED31ED61BD40E5D009E101E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Draw;
+			productName = Draw;
+			productReference = CED31ED81BD40E5D009E101E /* Draw.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CED31EEC1BD40E5F009E101E /* DrawTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED31EFA1BD40E5F009E101E /* Build configuration list for PBXNativeTarget "DrawTests" */;
+			buildPhases = (
+				CED31EE91BD40E5F009E101E /* Sources */,
+				CED31EEA1BD40E5F009E101E /* Frameworks */,
+				CED31EEB1BD40E5F009E101E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CED31EEF1BD40E5F009E101E /* PBXTargetDependency */,
+			);
+			name = DrawTests;
+			productName = DrawTests;
+			productReference = CED31EED1BD40E5F009E101E /* DrawTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CED31ED01BD40E5D009E101E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Bersearch Information Services";
+				TargetAttributes = {
+					CED31ED71BD40E5D009E101E = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					CED31EEC1BD40E5F009E101E = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = CED31ED71BD40E5D009E101E;
+					};
+				};
+			};
+			buildConfigurationList = CED31ED31BD40E5D009E101E /* Build configuration list for PBXProject "Draw" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CED31ECF1BD40E5D009E101E;
+			productRefGroup = CED31ED91BD40E5D009E101E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CED31ED71BD40E5D009E101E /* Draw */,
+				CED31EEC1BD40E5F009E101E /* DrawTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CED31ED61BD40E5D009E101E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED31EE31BD40E5D009E101E /* Document.xib in Resources */,
+				CED31EE51BD40E5D009E101E /* Images.xcassets in Resources */,
+				CED31EE81BD40E5E009E101E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED31EEB1BD40E5F009E101E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CED31ED41BD40E5D009E101E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED31EE01BD40E5D009E101E /* Document.swift in Sources */,
+				CED31EDE1BD40E5D009E101E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED31EE91BD40E5F009E101E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED31EF41BD40E5F009E101E /* DrawTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CED31EEF1BD40E5F009E101E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CED31ED71BD40E5D009E101E /* Draw */;
+			targetProxy = CED31EEE1BD40E5F009E101E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CED31EE11BD40E5D009E101E /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED31EE21BD40E5D009E101E /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		CED31EE61BD40E5E009E101E /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED31EE71BD40E5E009E101E /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CED31EF51BD40E5F009E101E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CED31EF61BD40E5F009E101E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CED31EF81BD40E5F009E101E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Draw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CED31EF91BD40E5F009E101E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Draw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CED31EFB1BD40E5F009E101E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DrawTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Draw.app/Contents/MacOS/Draw";
+			};
+			name = Debug;
+		};
+		CED31EFC1BD40E5F009E101E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DrawTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Draw.app/Contents/MacOS/Draw";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CED31ED31BD40E5D009E101E /* Build configuration list for PBXProject "Draw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED31EF51BD40E5F009E101E /* Debug */,
+				CED31EF61BD40E5F009E101E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED31EF71BD40E5F009E101E /* Build configuration list for PBXNativeTarget "Draw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED31EF81BD40E5F009E101E /* Debug */,
+				CED31EF91BD40E5F009E101E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CED31EFA1BD40E5F009E101E /* Build configuration list for PBXNativeTarget "DrawTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED31EFB1BD40E5F009E101E /* Debug */,
+				CED31EFC1BD40E5F009E101E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CED31ED01BD40E5D009E101E /* Project object */;
+}
