@@ -23,9 +23,8 @@ supporting panel instead of being instantiated within each document window).
 class ToolbarView: NSView {
 
     override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
-
-        // Drawing code here.
+        NSColor(calibratedRed: 0.7, green: 0.8, blue: 1.0, alpha: 1.0).set()        // sky blue
+        NSBezierPath.fillRect(self.bounds)
     }
     
 }

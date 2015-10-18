@@ -23,9 +23,8 @@ supporting panel instead of being instantiated within each document window).
 class DrawingView: NSView {
 
     override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
-
-        // Drawing code here.
+        NSColor.whiteColor().set()        // sky blue
+        NSBezierPath.fillRect(self.bounds)
     }
     
 }
