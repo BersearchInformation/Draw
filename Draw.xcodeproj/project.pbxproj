@@ -13,6 +13,10 @@
 		CED31EE51BD40E5D009E101E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE41BD40E5D009E101E /* Images.xcassets */; };
 		CED31EE81BD40E5E009E101E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE61BD40E5E009E101E /* MainMenu.xib */; };
 		CED31EF41BD40E5F009E101E /* DrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EF31BD40E5F009E101E /* DrawTests.swift */; };
+		CED31EFE1BD41766009E101E /* DrawObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EFD1BD41766009E101E /* DrawObject.swift */; };
+		CED31F001BD41A8A009E101E /* Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EFF1BD41A8A009E101E /* Oval.swift */; };
+		CED31F021BD41BCF009E101E /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31F011BD41BCF009E101E /* Rectangle.swift */; };
+		CED31F041BD41BED009E101E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31F031BD41BED009E101E /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		CED31EED1BD40E5F009E101E /* DrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED31EF21BD40E5F009E101E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED31EF31BD40E5F009E101E /* DrawTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTests.swift; sourceTree = "<group>"; };
+		CED31EFD1BD41766009E101E /* DrawObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawObject.swift; sourceTree = "<group>"; };
+		CED31EFF1BD41A8A009E101E /* Oval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oval.swift; sourceTree = "<group>"; };
+		CED31F011BD41BCF009E101E /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		CED31F031BD41BED009E101E /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 				CED31EDD1BD40E5D009E101E /* AppDelegate.swift */,
 				CED31EDF1BD40E5D009E101E /* DrawDocument.swift */,
 				CED31EE11BD40E5D009E101E /* DrawDocument.xib */,
+				CED31F051BD41C06009E101E /* Draw Objects */,
 				CED31EE41BD40E5D009E101E /* Images.xcassets */,
 				CED31EE61BD40E5E009E101E /* MainMenu.xib */,
 				CED31EDB1BD40E5D009E101E /* Supporting Files */,
@@ -110,6 +119,17 @@
 				CED31EF21BD40E5F009E101E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CED31F051BD41C06009E101E /* Draw Objects */ = {
+			isa = PBXGroup;
+			children = (
+				CED31EFD1BD41766009E101E /* DrawObject.swift */,
+				CED31EFF1BD41A8A009E101E /* Oval.swift */,
+				CED31F011BD41BCF009E101E /* Rectangle.swift */,
+				CED31F031BD41BED009E101E /* Line.swift */,
+			);
+			name = "Draw Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED31F021BD41BCF009E101E /* Rectangle.swift in Sources */,
 				CED31EE01BD40E5D009E101E /* DrawDocument.swift in Sources */,
+				CED31EFE1BD41766009E101E /* DrawObject.swift in Sources */,
+				CED31F041BD41BED009E101E /* Line.swift in Sources */,
 				CED31EDE1BD40E5D009E101E /* AppDelegate.swift in Sources */,
+				CED31F001BD41A8A009E101E /* Oval.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
