@@ -17,6 +17,8 @@
 		CED31F001BD41A8A009E101E /* Oval.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EFF1BD41A8A009E101E /* Oval.swift */; };
 		CED31F021BD41BCF009E101E /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31F011BD41BCF009E101E /* Rectangle.swift */; };
 		CED31F041BD41BED009E101E /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31F031BD41BED009E101E /* Line.swift */; };
+		CED31F071BD42007009E101E /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31F061BD42007009E101E /* DrawingView.swift */; };
+		CED31F091BD4207E009E101E /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31F081BD4207E009E101E /* ToolbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CED31EFF1BD41A8A009E101E /* Oval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oval.swift; sourceTree = "<group>"; };
 		CED31F011BD41BCF009E101E /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		CED31F031BD41BED009E101E /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		CED31F061BD42007009E101E /* DrawingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		CED31F081BD4207E009E101E /* ToolbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				CED31EDD1BD40E5D009E101E /* AppDelegate.swift */,
 				CED31EDF1BD40E5D009E101E /* DrawDocument.swift */,
 				CED31EE11BD40E5D009E101E /* DrawDocument.xib */,
+				CED31F0A1BD420A0009E101E /* View objects */,
 				CED31F051BD41C06009E101E /* Draw Objects */,
 				CED31EE41BD40E5D009E101E /* Images.xcassets */,
 				CED31EE61BD40E5E009E101E /* MainMenu.xib */,
@@ -130,6 +135,15 @@
 				CED31F031BD41BED009E101E /* Line.swift */,
 			);
 			name = "Draw Objects";
+			sourceTree = "<group>";
+		};
+		CED31F0A1BD420A0009E101E /* View objects */ = {
+			isa = PBXGroup;
+			children = (
+				CED31F061BD42007009E101E /* DrawingView.swift */,
+				CED31F081BD4207E009E101E /* ToolbarView.swift */,
+			);
+			name = "View objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED31F071BD42007009E101E /* DrawingView.swift in Sources */,
 				CED31F021BD41BCF009E101E /* Rectangle.swift in Sources */,
+				CED31F091BD4207E009E101E /* ToolbarView.swift in Sources */,
 				CED31EE01BD40E5D009E101E /* DrawDocument.swift in Sources */,
 				CED31EFE1BD41766009E101E /* DrawObject.swift in Sources */,
 				CED31F041BD41BED009E101E /* Line.swift in Sources */,
