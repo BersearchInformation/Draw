@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CED31EDE1BD40E5D009E101E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EDD1BD40E5D009E101E /* AppDelegate.swift */; };
-		CED31EE01BD40E5D009E101E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EDF1BD40E5D009E101E /* Document.swift */; };
-		CED31EE31BD40E5D009E101E /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE11BD40E5D009E101E /* Document.xib */; };
+		CED31EE01BD40E5D009E101E /* DrawDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EDF1BD40E5D009E101E /* DrawDocument.swift */; };
+		CED31EE31BD40E5D009E101E /* DrawDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE11BD40E5D009E101E /* DrawDocument.xib */; };
 		CED31EE51BD40E5D009E101E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE41BD40E5D009E101E /* Images.xcassets */; };
 		CED31EE81BD40E5E009E101E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED31EE61BD40E5E009E101E /* MainMenu.xib */; };
 		CED31EF41BD40E5F009E101E /* DrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED31EF31BD40E5F009E101E /* DrawTests.swift */; };
@@ -29,8 +29,8 @@
 		CED31ED81BD40E5D009E101E /* Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Draw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED31EDC1BD40E5D009E101E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED31EDD1BD40E5D009E101E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CED31EDF1BD40E5D009E101E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		CED31EE21BD40E5D009E101E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		CED31EDF1BD40E5D009E101E /* DrawDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawDocument.swift; sourceTree = "<group>"; };
+		CED31EE21BD40E5D009E101E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DrawDocument.xib; sourceTree = "<group>"; };
 		CED31EE41BD40E5D009E101E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CED31EE71BD40E5E009E101E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		CED31EED1BD40E5F009E101E /* DrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				CED31EDD1BD40E5D009E101E /* AppDelegate.swift */,
-				CED31EDF1BD40E5D009E101E /* Document.swift */,
-				CED31EE11BD40E5D009E101E /* Document.xib */,
+				CED31EDF1BD40E5D009E101E /* DrawDocument.swift */,
+				CED31EE11BD40E5D009E101E /* DrawDocument.xib */,
 				CED31EE41BD40E5D009E101E /* Images.xcassets */,
 				CED31EE61BD40E5E009E101E /* MainMenu.xib */,
 				CED31EDB1BD40E5D009E101E /* Supporting Files */,
@@ -192,7 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED31EE31BD40E5D009E101E /* Document.xib in Resources */,
+				CED31EE31BD40E5D009E101E /* DrawDocument.xib in Resources */,
 				CED31EE51BD40E5D009E101E /* Images.xcassets in Resources */,
 				CED31EE81BD40E5E009E101E /* MainMenu.xib in Resources */,
 			);
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED31EE01BD40E5D009E101E /* Document.swift in Sources */,
+				CED31EE01BD40E5D009E101E /* DrawDocument.swift in Sources */,
 				CED31EDE1BD40E5D009E101E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,12 +236,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CED31EE11BD40E5D009E101E /* Document.xib */ = {
+		CED31EE11BD40E5D009E101E /* DrawDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CED31EE21BD40E5D009E101E /* Base */,
 			);
-			name = Document.xib;
+			name = DrawDocument.xib;
 			sourceTree = "<group>";
 		};
 		CED31EE61BD40E5E009E101E /* MainMenu.xib */ = {
