@@ -19,12 +19,68 @@ supporting panel instead of being instantiated within each document window).
 
 */
 
+enum ToolSelectedType {
+    case OvalTool
+    case RectangleTool
+    case LineTool
+}
+
 
 class ToolbarView: NSView {
+    
+    @IBOutlet weak var ovalButton: NSButton!
+    @IBOutlet weak var rectangleButton: NSButton!
+    @IBOutlet weak var lineButton: NSButton!
+    
+    @IBOutlet weak var fillColorCW: NSColorWell!
+    @IBOutlet weak var strokeColorCW: NSColorWell!
+    
+    
+    var selectedTool: ToolSelectedType = ToolSelectedType.OvalTool {
+        didSet {
+            if selectedTool == .OvalTool {
+                println("toolSelected = OvalTool")
+            }
+            if selectedTool == .RectangleTool {
+                println("toolSelected = RectangleTool")
+            }
+            if selectedTool == .LineTool {
+                println("toolSelected = LineTool")
+            }
+        }
+    }
+    
+    
+    override var intrinsicContentSize: NSSize {
+        return NSSize(width: 54.0, height: 267.0)
+    }
+    
 
+    
     override func drawRect(dirtyRect: NSRect) {
         NSColor(calibratedRed: 0.7, green: 0.8, blue: 1.0, alpha: 1.0).set()        // sky blue
         NSBezierPath.fillRect(self.bounds)
     }
     
+    
+    @IBAction func userSelectedTool(sender: NSButton) {
+        switch (sender) {
+        case ovalButton:
+            selectedTool = .OvalTool
+            rectangleButton.state = NSOffState
+            lineButton.state = NSOffState
+        case rectangleButton:
+            selectedTool = .RectangleTool
+            ovalButton.state = NSOffState
+            lineButton.state = NSOffState
+        case lineButton:
+            selectedTool = .LineTool
+            ovalButton.state = NSOffState
+            rectangleButton.state = NSOffState
+        default:
+            selectedTool = .OvalTool
+            rectangleButton.state = NSOffState
+            lineButton.state = NSOffState
+        }
+    }
 }

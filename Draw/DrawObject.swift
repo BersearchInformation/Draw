@@ -11,8 +11,8 @@ import Cocoa
 /*
 
 A draw document will support drawing of oval, rectangle and line objects. Oval and Rectangle objects will
-maintain a stroke color and a fill color. Line objects will maintain a stroke color. All objects will maintain
-objectBounds
+maintain a stroke color and a fill color. Line objects will maintain a starting point, ending point and stroke color.
+All objects will maintain objectBounds
 
 */
 
@@ -21,7 +21,10 @@ class DrawObject: NSObject {
     
     var strokeColor: NSColor = NSColor.clearColor()
     
-    var fillColor: NSColor = NSColor.clearColor()
+    init(objectBounds: CGRect, strokeColor:NSColor) {
+        self.objectBounds = objectBounds
+        self.strokeColor = strokeColor
+    }
     
     func draw() {
         // subclasses will override draw() to implement their drawing behaviour

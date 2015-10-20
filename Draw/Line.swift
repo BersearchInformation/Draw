@@ -8,6 +8,32 @@
 
 import Cocoa
 
+/*
+
+A draw document will support drawing of oval, rectangle and line objects. Line objects will maintain
+a starting point, ending point and stroke color. All objects will maintain objectBounds
+
+*/
+
+
 class Line: DrawObject {
+    var initialPoint: CGPoint
+    var finalPoint: CGPoint
+    
+    init(objectBounds: CGRect, initialPoint: CGPoint, finalPoint: CGPoint, strokeColor:NSColor) {
+        self.initialPoint = initialPoint
+        self.finalPoint = finalPoint
+        super.init(objectBounds: objectBounds, strokeColor: strokeColor)
+    }
+    
+    
+    override func draw() {
+        let path = NSBezierPath()
+        path.moveToPoint(initialPoint)
+        path.lineToPoint(finalPoint)
+        strokeColor.set()
+        path.stroke()
+    }
+
 
 }

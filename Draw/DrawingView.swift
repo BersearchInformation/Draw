@@ -11,8 +11,8 @@ import Cocoa
 /*
 
 A draw document will support drawing of oval, rectangle and line objects. Oval and Rectangle objects will
-maintain a stroke color and a fill color. Line objects will maintain a stroke color. All objects will maintain
-objectBounds
+maintain a stroke color and a fill color. Line objects will maintain a starting point, ending point and stroke color.
+All objects will maintain objectBounds
 
 A draw document will present a drawing view and a toolbar view (eventually, the toolbar view will move to a
 supporting panel instead of being instantiated within each document window).
@@ -21,10 +21,173 @@ supporting panel instead of being instantiated within each document window).
 
 
 class DrawingView: NSView {
-
-    override func drawRect(dirtyRect: NSRect) {
-        NSColor.whiteColor().set()        // sky blue
-        NSBezierPath.fillRect(self.bounds)
+    
+    @IBOutlet weak var document: DrawDocument!
+    
+    var drawObjects: [DrawObject] =         Array()         // initializes drawObjects to empty array
+    var proposedObject: DrawObject? =       nil {
+        didSet {
+            needsDisplay = true
+        }
     }
     
+    var selectedTool: ToolSelectedType =    .OvalTool
+    var fillColor: NSColor =                NSColor.clearColor()
+    var strokeColor: NSColor =              NSColor.clearColor()
+    
+    var initialPoint: CGPoint =             CGPoint()
+    
+    
+
+    override func drawRect(dirtyRect: NSRect) {
+        NSColor.whiteColor().set()
+        NSBezierPath.fillRect(self.bounds)
+        
+        for drawObject in drawObjects {
+            drawObject.draw()
+        }
+        
+        if let proposedObject = proposedObject {
+            proposedObject.draw()
+        }
+    }
+    
+    
+    // MARK: - mouse events
+    
+    /*
+    
+    mouseDown(theEvent: NSEvent)
+    
+    + query toolbar view for the selected tool, fill color and stroke color
+    + set the proposed object's initial point
+    (we get the tool and color info here in case the user clicks without dragging)
+    
+    
+    mouseDragged(theEvent: NSEvent)
+    
+    draw representation of proposed object with alpha set to 0.5 * actual alpha
+    
+    + get the current point
+    + compute colors
+    + get the object bounds
+    + create the proposed object
+    
+    
+    mouseUp(theEvent: NSEvent)
+    
+    + discard the proposed object
+    + get the final point
+    + get the object's bounds
+    + instantiate actual object and add it to object array
+    
+    */
+    
+    
+    override func mouseDown(theEvent: NSEvent) {
+        // get the selected tool
+        selectedTool = document.toolbarView.selectedTool
+        
+        // get the fill color
+        fillColor = document.toolbarView.fillColorCW.color
+        
+        // get the stroke color
+        strokeColor = document.toolbarView.strokeColorCW.color
+        
+        // set the initial corner
+        let locationInWindow = theEvent.locationInWindow
+        initialPoint = convertPoint(locationInWindow, fromView: nil)
+    }
+    
+    
+    override func mouseDragged(theEvent: NSEvent) {
+        // get the current point
+        let locationInWindow = theEvent.locationInWindow
+        let currentPoint = convertPoint(locationInWindow, fromView: nil)
+        
+        // compute the colors for the proposed object
+        let fillAlpha = 0.5 * fillColor.alphaComponent              // currently assumes RGBA color...
+        let proposedFillColor = NSColor(
+            calibratedRed: fillColor.redComponent,
+            green: fillColor.greenComponent,
+            blue: fillColor.blueComponent,
+            alpha: fillAlpha)
+        
+        let strokeAlpha = 0.5 * strokeColor.alphaComponent          // currently assumes RGBA color...
+        let proposedStrokeColor = NSColor(
+            calibratedRed: strokeColor.redComponent,
+            green: strokeColor.greenComponent,
+            blue: strokeColor.blueComponent,
+            alpha: strokeAlpha)
+        
+        // get the object bopunds
+        let objectBounds = rectFromTwoPoints(initialPoint, currentPoint: currentPoint)
+        
+        // create the object
+        switch selectedTool {
+        case .OvalTool:
+            proposedObject = Oval(
+                objectBounds: objectBounds,
+                strokeColor: proposedStrokeColor,
+                fillColor: proposedFillColor)
+        case .RectangleTool:
+            proposedObject = Rectangle(
+                objectBounds: objectBounds,
+                strokeColor: proposedStrokeColor,
+                fillColor: proposedFillColor)
+        case .LineTool:
+            proposedObject = Line(
+                objectBounds: objectBounds,
+                initialPoint: initialPoint,
+                finalPoint: currentPoint,
+                strokeColor: proposedStrokeColor)
+        }
+    }
+    
+    
+    override func mouseUp(theEvent: NSEvent) {
+        proposedObject = nil
+        
+        // get the final point
+        let locationInWindow = theEvent.locationInWindow
+        let finalPoint = convertPoint(locationInWindow, fromView: nil)
+        
+        // get the object bopunds
+        let objectBounds = rectFromTwoPoints(initialPoint, currentPoint: finalPoint)
+
+        // create the object
+        var drawObject: DrawObject
+        switch selectedTool {
+        case .OvalTool:
+            drawObject = Oval(
+                objectBounds: objectBounds,
+                strokeColor: strokeColor,
+                fillColor: fillColor)
+        case .RectangleTool:
+            drawObject = Rectangle(
+                objectBounds: objectBounds,
+                strokeColor: strokeColor,
+                fillColor: fillColor)
+        case .LineTool:
+            drawObject = Line(
+                objectBounds: objectBounds,
+                initialPoint: initialPoint,
+                finalPoint: finalPoint,
+                strokeColor: strokeColor)
+        }
+        
+        // add it to the array
+        drawObjects.append(drawObject)
+    }
+    
+    
+    // MARK: - helpers
+    
+    func rectFromTwoPoints(initialPoint: CGPoint, currentPoint: CGPoint) -> CGRect {
+        let x = initialPoint.x < currentPoint.x ? initialPoint.x : currentPoint.x
+        let y = initialPoint.y < currentPoint.y ? initialPoint.y : currentPoint.y
+        let width = initialPoint.x < currentPoint.x ? currentPoint.x - initialPoint.x : initialPoint.x - currentPoint.x
+        let height = initialPoint.y < currentPoint.y ? currentPoint.y - initialPoint.y : initialPoint.y - currentPoint.y
+        return CGRect(x: x, y: y, width: width, height: height)
+    }
 }

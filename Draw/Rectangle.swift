@@ -8,6 +8,30 @@
 
 import Cocoa
 
+/*
+
+A draw document will support drawing of oval, rectangle and line objects. Oval and Rectangle objects will
+maintain a stroke color and a fill color. All objects will maintain objectBounds
+
+*/
+
+
 class Rectangle: DrawObject {
 
+    var fillColor: NSColor = NSColor.clearColor()
+    
+    init(objectBounds: CGRect, strokeColor:NSColor, fillColor: NSColor) {
+        super.init(objectBounds: objectBounds, strokeColor: strokeColor)
+        self.fillColor = fillColor
+    }
+
+    override func draw() {
+        let path = NSBezierPath(rect: objectBounds)
+        fillColor.set()
+        path.fill()
+        strokeColor.set()
+        path.stroke()
+    }
+
+    
 }

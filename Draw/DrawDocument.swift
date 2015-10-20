@@ -21,6 +21,8 @@ supporting panel instead of being instantiated within each document window).
 */
 
 class DrawDocument: NSDocument {
+    
+    @IBOutlet weak var toolbarView: ToolbarView!
 
     override init() {
         super.init()
