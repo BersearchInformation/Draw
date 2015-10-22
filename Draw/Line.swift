@@ -17,6 +17,7 @@ a starting point, ending point and stroke color. All objects will maintain objec
 
 
 class Line: DrawObject {
+    
     var initialPoint: CGPoint
     var finalPoint: CGPoint
     
@@ -24,6 +25,18 @@ class Line: DrawObject {
         self.initialPoint = initialPoint
         self.finalPoint = finalPoint
         super.init(objectBounds: objectBounds, strokeColor: strokeColor)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        initialPoint = aDecoder.decodePointForKey("initialPoint")
+        finalPoint = aDecoder.decodePointForKey("finalPoint")
+        super.init(coder: aDecoder)
+    }
+    
+    override func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodePoint(initialPoint, forKey: "initialPoint")
+        aCoder.encodePoint(finalPoint, forKey: "finalPoint")
+        super.encodeWithCoder(aCoder)
     }
     
     

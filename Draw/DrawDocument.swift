@@ -22,7 +22,12 @@ supporting panel instead of being instantiated within each document window).
 
 class DrawDocument: NSDocument {
     
+    @IBOutlet weak var drawingView: DrawingView!
     @IBOutlet weak var toolbarView: ToolbarView!
+    
+    // model object
+    var drawObjects: [DrawObject] = []          // initializes drawObjects to empty array
+    
 
     override init() {
         super.init()
@@ -32,6 +37,12 @@ class DrawDocument: NSDocument {
     override func windowControllerDidLoadNib(aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
         // Add any code here that needs to be executed once the windowController has loaded the document's window.
+        
+        // Thank you Ken Ferry
+        // http://www.cocoabuilder.com/archive/cocoa/208918-nscolorwell-and-alpha.html
+        
+        // tell the shared color panel to show alpha (default is to not show alpha)
+        NSColorPanel.sharedColorPanel().showsAlpha = true
     }
 
     override class func autosavesInPlace() -> Bool {
@@ -39,24 +50,17 @@ class DrawDocument: NSDocument {
     }
 
     override var windowNibName: String? {
-        // Returns the nib file name of the document
-        // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this property and override -makeWindowControllers instead.
         return "DrawDocument"
     }
 
     override func dataOfType(typeName: String, error outError: NSErrorPointer) -> NSData? {
-        // Insert code here to write your document to data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning nil.
-        // You can also choose to override fileWrapperOfType:error:, writeToURL:ofType:error:, or writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-        outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return nil
+        return NSKeyedArchiver.archivedDataWithRootObject(drawObjects)
     }
 
     override func readFromData(data: NSData, ofType typeName: String, error outError: NSErrorPointer) -> Bool {
-        // Insert code here to read your document from the given data of the specified type. If outError != nil, ensure that you create and set an appropriate error when returning false.
-        // You can also choose to override readFromFileWrapper:ofType:error: or readFromURL:ofType:error: instead.
-        // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-        outError.memory = NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-        return false
+        let drawObjects = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [DrawObject]
+        self.drawObjects = drawObjects
+        return true
     }
 
 

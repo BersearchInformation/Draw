@@ -18,12 +18,23 @@ maintain a stroke color and a fill color. All objects will maintain objectBounds
 
 class Rectangle: DrawObject {
 
-    var fillColor: NSColor = NSColor.clearColor()
+    var fillColor: NSColor =    NSColor.clearColor()
     
     init(objectBounds: CGRect, strokeColor:NSColor, fillColor: NSColor) {
         super.init(objectBounds: objectBounds, strokeColor: strokeColor)
         self.fillColor = fillColor
     }
+
+    required init(coder aDecoder: NSCoder) {
+        fillColor = aDecoder.decodeObjectForKey("fillColor") as! NSColor
+        super.init(coder: aDecoder)
+    }
+    
+    override func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(fillColor, forKey: "fillColor")
+        super.encodeWithCoder(aCoder)
+    }
+    
 
     override func draw() {
         let path = NSBezierPath(rect: objectBounds)

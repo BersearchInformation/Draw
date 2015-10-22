@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DrawDocument" customModule="Draw" customModuleProvider="target">
             <connections>
+                <outlet property="drawingView" destination="au2-jy-Vza" id="VgW-1l-rAl"/>
                 <outlet property="toolbarView" destination="pVh-iF-oxk" id="Lid-Kj-Zm9"/>
                 <outlet property="window" destination="xOd-HO-29H" id="JIz-fz-R2o"/>
             </connections>

@@ -16,14 +16,27 @@ All objects will maintain objectBounds
 
 */
 
-class DrawObject: NSObject {
-    var objectBounds: CGRect = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
+
+
+
+class DrawObject: NSObject, NSCoding {
     
-    var strokeColor: NSColor = NSColor.clearColor()
+    var objectBounds: CGRect =      CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
+    var strokeColor: NSColor =      NSColor.clearColor()
     
     init(objectBounds: CGRect, strokeColor:NSColor) {
         self.objectBounds = objectBounds
         self.strokeColor = strokeColor
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        objectBounds = aDecoder.decodeRectForKey("objectBounds")
+        strokeColor = aDecoder.decodeObjectForKey("strokeColor") as! NSColor
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeRect(objectBounds, forKey: "objectBounds")
+        aCoder.encodeObject(strokeColor, forKey: "strokeColor")
     }
     
     func draw() {

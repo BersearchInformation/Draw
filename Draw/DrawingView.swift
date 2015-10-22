@@ -24,7 +24,9 @@ class DrawingView: NSView {
     
     @IBOutlet weak var document: DrawDocument!
     
-    var drawObjects: [DrawObject] =         Array()         // initializes drawObjects to empty array
+    // model object
+    // var drawObjects: [DrawObject] = []          // initializes drawObjects to empty array
+    
     var proposedObject: DrawObject? =       nil {
         didSet {
             needsDisplay = true
@@ -43,7 +45,7 @@ class DrawingView: NSView {
         NSColor.whiteColor().set()
         NSBezierPath.fillRect(self.bounds)
         
-        for drawObject in drawObjects {
+        for drawObject in document.drawObjects {
             drawObject.draw()
         }
         
@@ -106,19 +108,8 @@ class DrawingView: NSView {
         let currentPoint = convertPoint(locationInWindow, fromView: nil)
         
         // compute the colors for the proposed object
-        let fillAlpha = 0.5 * fillColor.alphaComponent              // currently assumes RGBA color...
-        let proposedFillColor = NSColor(
-            calibratedRed: fillColor.redComponent,
-            green: fillColor.greenComponent,
-            blue: fillColor.blueComponent,
-            alpha: fillAlpha)
-        
-        let strokeAlpha = 0.5 * strokeColor.alphaComponent          // currently assumes RGBA color...
-        let proposedStrokeColor = NSColor(
-            calibratedRed: strokeColor.redComponent,
-            green: strokeColor.greenComponent,
-            blue: strokeColor.blueComponent,
-            alpha: strokeAlpha)
+        let proposedFillColor = proposedColorForColor(fillColor)
+        let proposedStrokeColor = proposedColorForColor(strokeColor)
         
         // get the object bopunds
         let objectBounds = rectFromTwoPoints(initialPoint, currentPoint: currentPoint)
@@ -176,8 +167,8 @@ class DrawingView: NSView {
                 strokeColor: strokeColor)
         }
         
-        // add it to the array
-        drawObjects.append(drawObject)
+        // add it to the model array
+        document.drawObjects.append(drawObject)
     }
     
     
@@ -189,5 +180,40 @@ class DrawingView: NSView {
         let width = initialPoint.x < currentPoint.x ? currentPoint.x - initialPoint.x : initialPoint.x - currentPoint.x
         let height = initialPoint.y < currentPoint.y ? currentPoint.y - initialPoint.y : initialPoint.y - currentPoint.y
         return CGRect(x: x, y: y, width: width, height: height)
+    }
+    
+    /*
+    
+    proposedColorForColor(color: NSColor) -> NSColor 
+    
+    returns a color appropriate for drawing proposed objects
+    
+    */
+    
+    func proposedColorForColor(color: NSColor) -> NSColor {
+        var proposedColor: NSColor
+        
+        // color is in an unknown colorspace - attempting to extract RGBA components could raise an exception
+        // does color map to RGBA colorspace?
+        let colorSpace = NSColorSpace.genericRGBColorSpace
+        if let rgbaColor = color.colorUsingColorSpace(colorSpace())
+        {
+            let proposedColorAlpha = 0.5 * rgbaColor.alphaComponent
+            proposedColor = NSColor(
+                calibratedRed: rgbaColor.redComponent,
+                green: rgbaColor.greenComponent,
+                blue: rgbaColor.blueComponent,
+                alpha: proposedColorAlpha)
+        }
+        else
+        {
+            // could not convert color to rgba colorspace - provide a light gray with 0.5 alpha as an alternate color
+            proposedColor = NSColor(
+                calibratedRed: 0.8,
+                green: 0.8,
+                blue: 0.8,
+                alpha: 0.5)
+        }
+        return proposedColor
     }
 }
