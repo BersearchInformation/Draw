@@ -67,20 +67,24 @@ class ToolbarView: NSView {
         switch (sender) {
         case ovalButton:
             selectedTool = .OvalTool
-            rectangleButton.state = NSOffState
-            lineButton.state = NSOffState
+            ovalButton.state =          NSOnState
+            rectangleButton.state =     NSOffState
+            lineButton.state =          NSOffState
         case rectangleButton:
             selectedTool = .RectangleTool
-            ovalButton.state = NSOffState
-            lineButton.state = NSOffState
+            rectangleButton.state =     NSOnState
+            ovalButton.state =          NSOffState
+            lineButton.state =          NSOffState
         case lineButton:
             selectedTool = .LineTool
-            ovalButton.state = NSOffState
-            rectangleButton.state = NSOffState
+            lineButton.state =          NSOnState
+            ovalButton.state =          NSOffState
+            rectangleButton.state =     NSOffState
         default:
             selectedTool = .OvalTool
-            rectangleButton.state = NSOffState
-            lineButton.state = NSOffState
+            ovalButton.state =          NSOnState
+            rectangleButton.state =     NSOffState
+            lineButton.state =          NSOffState
         }
     }
 }
