@@ -24,9 +24,6 @@ class DrawingView: NSView {
     
     @IBOutlet weak var document: DrawDocument!
     
-    // model object
-    // var drawObjects: [DrawObject] = []          // initializes drawObjects to empty array
-    
     var proposedObject: DrawObject? =       nil {
         didSet {
             needsDisplay = true

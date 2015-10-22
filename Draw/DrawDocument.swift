@@ -25,6 +25,18 @@ class DrawDocument: NSDocument {
     @IBOutlet weak var drawingView: DrawingView!
     @IBOutlet weak var toolbarView: ToolbarView!
     
+    
+    /*
+    
+    Note: The document needs to maintain the model object. 
+    
+    Previously, the view maintained the model object. This worked until we implementted 
+    saving and opening of documents. When readFromData(_:ofType:error) unarchived [DrawObject] 
+    and attempted to assign it to drawingView.drawObjects, we found that the nib had not yet 
+    been loaded and drawingView == nil; crash happened. Exception: unwrapping unexpected nil etc.
+    
+    */
+    
     // model object
     var drawObjects: [DrawObject] = []          // initializes drawObjects to empty array
     
