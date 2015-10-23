@@ -38,17 +38,20 @@ class ToolbarView: NSView {
     
     var selectedTool: ToolSelectedType = ToolSelectedType.OvalTool {
         didSet {
-            if selectedTool == .OvalTool {
-                println("toolSelected = OvalTool")
-            }
-            if selectedTool == .RectangleTool {
-                println("toolSelected = RectangleTool")
-            }
-            if selectedTool == .LineTool {
-                println("toolSelected = LineTool")
-            }
+//            if selectedTool == .OvalTool {
+//                println("toolSelected = OvalTool")
+//            }
+//            if selectedTool == .RectangleTool {
+//                println("toolSelected = RectangleTool")
+//            }
+//            if selectedTool == .LineTool {
+//                println("toolSelected = LineTool")
+//            }
         }
     }
+    
+    // used when implementing undo
+    var toolName = "Oval"
     
     
     override var intrinsicContentSize: NSSize {
@@ -67,21 +70,25 @@ class ToolbarView: NSView {
         switch (sender) {
         case ovalButton:
             selectedTool = .OvalTool
+            toolName = "Oval"
             ovalButton.state =          NSOnState
             rectangleButton.state =     NSOffState
             lineButton.state =          NSOffState
         case rectangleButton:
             selectedTool = .RectangleTool
+            toolName = "Rectangle"
             rectangleButton.state =     NSOnState
             ovalButton.state =          NSOffState
             lineButton.state =          NSOffState
         case lineButton:
             selectedTool = .LineTool
+            toolName = "Line"
             lineButton.state =          NSOnState
             ovalButton.state =          NSOffState
             rectangleButton.state =     NSOffState
         default:
             selectedTool = .OvalTool
+            toolName = "Oval"
             ovalButton.state =          NSOnState
             rectangleButton.state =     NSOffState
             lineButton.state =          NSOffState

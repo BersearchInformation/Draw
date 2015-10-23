@@ -38,8 +38,7 @@ class DrawDocument: NSDocument {
     */
     
     // model object
-    var drawObjects: [DrawObject] = []          // initializes drawObjects to empty array
-    
+    var drawObjects: [DrawObject] = []       // initializes drawObjects to empty array
 
     override init() {
         super.init()
@@ -74,6 +73,48 @@ class DrawDocument: NSDocument {
         self.drawObjects = drawObjects
         return true
     }
+    
+    
+    // MARK: - array management
+    
+    
+    func insertObject(anObject: DrawObject, atIndex index: Int) {
+        // Add the inverse of adding an object to the undo stack
+        let undo: NSUndoManager = undoManager!
+        undo.prepareWithInvocationTarget(self).removeObjectAtIndex(index)
+        if !undo.undoing {
+            let actionName = "Draw " + toolbarView.toolName
+            undo.setActionName(actionName)
+        }
+        
+        // add the object
+        drawObjects.insert(anObject, atIndex: index)
+        
+        // update display of the view
+        drawingView.needsDisplay = true
+    }
+    
+    
+    func removeObjectAtIndex(index: Int) {
+        let drawObject = drawObjects[index]
+        
+        // add the inverse of removing an object to the undo stack
+        let undo: NSUndoManager = undoManager!
+        undo.prepareWithInvocationTarget(self).insertObject(drawObject, atIndex: index)
+        if !undo.undoing {
+            let actionName = "Remove " + toolbarView.toolName
+            undo.setActionName(actionName)
+        }
+        
+        // remove the object
+        drawObjects.removeAtIndex(index)
+        
+        // update display of the view
+        drawingView.needsDisplay = true
+    }
+    
+    
+    
 
 
 }
