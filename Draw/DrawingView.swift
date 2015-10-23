@@ -165,7 +165,6 @@ class DrawingView: NSView {
         }
         
         // add it to the model array
-        // document.drawObjects.append(drawObject)
         document.insertObject(drawObject, atIndex: document.drawObjects.count)
     }
     
